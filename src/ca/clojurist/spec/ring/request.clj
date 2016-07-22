@@ -1,4 +1,4 @@
-(ns ca.clojurist.specs.ring.request
+(ns ca.clojurist.spec.ring.request
   "Provides a spec for a Ring request."
   {:author "Robert Medeiros" :email "robert@clojurist.ca"}
   (:require

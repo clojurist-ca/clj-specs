@@ -1,10 +1,14 @@
-# clj-specs
+# clj-spec.ring
 
-A collection of Clojure specs.
+A Clojure spec for Ring.
+
+## Status
+
+This is hardly started, let alone finished; it's basically me noodling around with Clojure's new "spec" library to get familiar with it.
 
 ## Usage
 
-FIXME
+Nothing (yet) to see here, move along…
 
 ## License
 

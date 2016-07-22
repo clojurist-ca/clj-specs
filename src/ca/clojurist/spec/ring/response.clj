@@ -1,4 +1,4 @@
-(ns ca.clojurist.specs.ring.response
+(ns ca.clojurist.spec.ring.response
   "Provides a spec for a Ring request."
   {:author "Robert Medeiros" :email "robert@clojurist.ca"}
   (:require
@@ -32,8 +32,8 @@
 ;;   sent for each such String value.
 
 (s/def ::headers
-  (s/map-of string? (s/or string?
-                          (s/cat :strings string?))))
+  (s/map-of string? (s/or :header string?
+                          :headers (s/cat :strings string?))))
 
 ;; :body
 ;;   (Optional, {String, ISeq, File, InputStream})
@@ -51,11 +51,10 @@
 ;;     stream is exhausted, it is .close'd.
 
 (s/def ::body
-  (s/or
-   string?
-   seq?
-   #(instance? % java.util.File)
-   #(instance? java.io.InputStream)))
+  (s/or :string-body string?
+        :seq-body seq?
+        :file-body #(instance? % java.io.File)
+        :input-stream-body #(instance? java.io.InputStream)))
 
 ;; Ring response
 ;; -------------------------------------------------------------------
